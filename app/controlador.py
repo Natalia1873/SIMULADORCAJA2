@@ -1,4 +1,4 @@
-from app.model import ProductoDAO, Producto, Tiquet 
+from app.model import ProductoDAO, Tiquet 
 from app.vista import Vista 
 
 
@@ -17,15 +17,12 @@ class Controlador:
 
     def run(self):
         while True:
-            self.carrito = {} 
-
+            self.carrito = {}
             while True:
                 self.vista.mostrar_productos(self.productos, self.carrito)
                 codigo_producto = self.vista.solicitar_codigo()
-
                 if codigo_producto.upper() == 'X':
                     break
-
                 try:
                     codigo = int(codigo_producto)
                     if not any(p.id == codigo for p in self.productos):
@@ -39,10 +36,11 @@ class Controlador:
                 try:
                     cantidad = int(unidades)
                     if cantidad < 1:
-                        raise ValueError
+                        print("Error: El número de unidades debe ser mayor que 0.")
+                        continue
                     self.agregar_producto(codigo, cantidad)
                 except ValueError:
-                    print("Error: El número de unidades debe ser un número mayor que 0.")
+                    print("Error: El número de unidades debe ser un número.")
                     continue
 
             self.vista.mostrar_productos(self.productos, self.carrito)

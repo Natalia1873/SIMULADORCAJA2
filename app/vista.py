@@ -1,5 +1,6 @@
 
 class Vista:
+    
     def mostrar_productos(self, productos, carrito):
         print("\nSIMULADOR DE CAJA")
         print("=================")
@@ -27,6 +28,4 @@ class Vista:
 
     def preguntar_nueva_compra(self):
         return input("¿Nueva compra? (S/N): ").strip().upper()
-
-    def preguntar_nueva_compra(self):
-        return input("¿Nueva compra? (S/N): ").strip().upper()
+        

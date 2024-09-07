@@ -1,7 +1,5 @@
 import sqlite3
 
-
-
 class Producto:
     def __init__(self, id, nombre, precio_unitario):
         self.id = id

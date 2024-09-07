@@ -1,5 +1,5 @@
 from app.controlador import Controlador
-from app.controlador import Vista
+
 
 
 def main():
